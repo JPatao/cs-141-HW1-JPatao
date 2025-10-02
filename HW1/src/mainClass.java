@@ -16,11 +16,31 @@ class Circle extends Shape {
     double area() {return PI * radius * radius;}
     void print() {
         System.out.print(super.name);
-        System.out.print(" ( ");
+        System.out.print("(");
         System.out.print(radius);
-        System.out.print(" ) ");
+        System.out.print(")");
         System.out.print(" : ");
         System.out.print(Double.toString(area()));;
+    }
+    void draw() {
+        System.out.print("*");
+    }
+}
+
+class Square extends Shape {
+    double length;
+    Square(double newLength) {
+        super("Square");
+        length = newLength;
+    }
+    double area() {return length * length;}
+    void print() {
+        System.out.print(super.name);
+        System.out.print("(");
+        System.out.print(length);
+        System.out.print(")");
+        System.out.print(" : ");
+        System.out.print(Double.toString(area()));
     }
     void draw() {
         System.out.print("*");

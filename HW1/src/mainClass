@@ -1,0 +1,34 @@
+abstract class Shape {
+    /*String name;
+    Shape(String newName) {name = newName;}
+    abstract void print();
+    abstract void draw();
+    abstract double area();*/
+    abstract double area();
+}
+
+class Circle extends Shape {
+    String name;
+    double radius;
+    static final double PI = 3.14;
+    Circle(String newName, double newRadius) {
+        super();
+        name = newName;
+        radius = newRadius;
+    }
+    double area() {return PI * radius * radius;}
+    void print() {
+        System.out.println(name + "(" + radius + ") : " + Double.toString(area()));
+    }
+    void draw() {
+        System.out.print("*");
+    }
+}
+
+public class mainClass {
+    public static void main(String[] args) {
+        Shape[] shapes = new Shape[]{new Circle("FirstCircle", 5)};
+        for (Shape s : shapes)
+            System.out.println(Double.toString(s.area()));
+    }
+}
